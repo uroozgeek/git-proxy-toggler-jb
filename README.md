@@ -1,28 +1,25 @@
-# git-proxy-toggler-jb
+# Git Proxy Toggler Plugin for Jetbrains IDE
 
 ![Build](https://github.com/uroozgeek/git-proxy-toggler-jb/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties), [plugin ID](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `PLUGIN_ID` in the above README badges.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+[![Version](https://img.shields.io/jetbrains/plugin/v/com.uroozgeek.gitproxytogglerjb.svg)](https://plugins.jetbrains.com/plugin/com.uroozgeek.gitproxytogglerjb)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/com.uroozgeek.gitproxytogglerjb.svg)](https://plugins.jetbrains.com/plugin/com.uroozgeek.gitproxytogglerjb)
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
-
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
-
-To keep everything working, do not remove `<!-- ... -->` sections. 
 <!-- Plugin description end -->
+## Overview
+The Git Proxy Toggler plugin for Jetbrains IDE allows you to easily toggle the Git HTTP proxy settings right from within your code editor. It simplifies the process of enabling or disabling the Git proxy, making it convenient for development in various network environments.
+
+## Features
+  - Toggle Git HTTP proxy settings with a single click using plugin's status bar icon.
+  - Shows current proxy status in convenient status bar icon
+  - Set and unset the proxy URL as needed by launching the plugin.
+  - Provides quick access to proxy configuration.
+
+## Usage
+  1. Open a project in Jetbrains IDE.
+  2. Use the command palette (`Ctrl+Shift+A` or `Cmd+Shift+A` on Mac).
+  3. Type "Git Proxy Toggler" and click or Open Tools menu and Click on "Git Proxy Toggler".
+  4. Follow the prompts to set or unset the Git proxy as needed.
 
 ## Installation
 
@@ -35,10 +32,34 @@ To keep everything working, do not remove `<!-- ... -->` sections.
 
   Download the [latest release](https://github.com/uroozgeek/git-proxy-toggler-jb/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+## Configuration
 
+By default, the plugin uses the proxy URL `"http://127.0.0.1:8080"`. You can customize this URL by launching the plugin settings and modifying the proxy url and modifying to your desired value.
 
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+## License
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+This plugin is licensed under the [MIT License](LICENSE).
+
+## Issues and Feedback
+
+If you encounter any issues, have questions, or would like to provide feedback, please open an issue on the [GitHub repository](https://github.com/uroozgeek/git-proxy-toggler-jb/issues).
+
+## Contribution
+
+Contributions are welcome! If you'd like to contribute to this project, please follow our [contribution guidelines](CONTRIBUTING.md).
+
+## Changelog
+
+See the [CHANGELOG.md](CHANGELOG.md) file for details on recent updates and changes.
+
+## Acknowledgments
+
+Thank you to the open-source community and contributors for making this plugin possible.
+
+## Author
+
+- [Urooz Ali](https://github.com/uroozgeek)
+
+## Enjoy!
+
+We hope you find this plugin useful for your development workflow. Happy coding!

@@ -1,18 +1,67 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<idea-plugin>
-    <id>com.github.uroozgeek.gitproxytogglerjb</id>
-    <name>git-proxy-toggler-jb Template</name>
-    <vendor>uroozgeek</vendor>
 
+<idea-plugin>
+
+    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+    <id>com.uroozgeek.gitproxytogglerjb</id>
+
+    <!-- Text to display as name on Settings | Plugin page -->
+    <name>Git Proxy Toggler</name>
+
+    <version>0.0.1</version>
+
+    <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <!-- Text to display as description on Settings | Plugin page -->
+    <description>
+        <![CDATA[
+         The Git Proxy Toggler plugin for Jetbrains IDE allows you to easily toggle the Git HTTP proxy settings right from within your code editor. It simplifies the process of enabling or disabling the Git proxy, making it convenient for development in various network environments.
+         <br/>
+         <br/>
+         The features include:
+            <ul>
+              <li>Toggle Git HTTP proxy settings with a single click using plugin's status bar icon.</li>
+              <li>Shows current proxy status in convenient status bar icon.</li>
+              <li>Set and unset the proxy URL as needed by launching the plugin.</li>
+              <li>Provides quick access to proxy configuration.</li>
+            </ul>
+            For more information visit the
+            <a href="https://github.com/uroozgeek/git-proxy-toggler-jb">project site</a>.
+        ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+      <ul>
+        <li><b>0.0.1</b>Initial Git Proxy Toggler release.</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <!-- Text to display as company information on Settings | Plugin page -->
+    <vendor url="https://github.com/uroozgeek">uroozgeek</vendor>
+    <!-- Declare the default resource location for localizing menu strings -->
+    <resource-bundle>messages.GitProxyToggler</resource-bundle>
+
+    <actions>
+        <group id="GitProxyToggler.Group">
+            <!-- Add your action to the main menu -->
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <action id="GitProxyToggler.SetUnsetGitProxyAction"
+                    class="com.uroozgeek.gitproxytogglerjb.action.SetUnsetGitProxyAction"
+                    text="Git Proxy Toggler" description="Click to change Git proxy settings"/>
+        </group>
+    </actions>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.uroozgeek.gitproxytogglerjb.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <notificationGroup id="GitProxyToggler.NotificationGroup" displayType="BALLOON"/>
+        <applicationService serviceImplementation="com.uroozgeek.gitproxytogglerjb.settings.AppSettingsState"/>
+        <applicationConfigurable
+                parentId="tools" displayName="Git Proxy Toggler"
+                instance="com.uroozgeek.gitproxytogglerjb.settings.AppSettingsConfigurable"
+                id="com.uroozgeek.gitproxytogglerjb.settings.AppSettingsConfigurable"/>
+        <statusBarWidgetFactory
+                implementation="com.uroozgeek.gitproxytogglerjb.widget.GitProxyTogglerStatusBarWidgetFactory"
+                id="GitProxyToggler.StatusBarWidgetFactory"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.uroozgeek.gitproxytogglerjb.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
