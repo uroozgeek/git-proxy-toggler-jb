@@ -20,6 +20,7 @@ The Git Proxy Toggler plugin for Jetbrains IDE allows you to easily toggle the G
   2. Use the command palette (`Ctrl+Shift+A` or `Cmd+Shift+A` on Mac).
   3. Type "Git Proxy Toggler" and click or Open Tools menu and Click on "Git Proxy Toggler".
   4. Follow the prompts to set or unset the Git proxy as needed.
+  5. Also, you can quickly toggle(either set the default or unset) the git proxy url by clicking the icon in status bar.  
 
 ## Installation
 
