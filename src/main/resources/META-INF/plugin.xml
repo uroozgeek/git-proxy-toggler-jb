@@ -8,7 +8,7 @@
     <!-- Text to display as name on Settings | Plugin page -->
     <name>Git Proxy Toggler</name>
 
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
     <depends>com.intellij.modules.platform</depends>
@@ -33,6 +33,7 @@
     <change-notes>
         <![CDATA[
       <ul>
+        <li><b>0.0.2</b>Updated Git Proxy Toggler to support IntelliJ 2024.</li>
         <li><b>0.0.1</b>Initial Git Proxy Toggler release.</li>
       </ul>
     ]]>
