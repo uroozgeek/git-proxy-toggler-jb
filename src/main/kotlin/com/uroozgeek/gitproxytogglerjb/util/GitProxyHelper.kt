@@ -9,7 +9,7 @@ object GitProxyHelper {
     val currentProxyUrl: String?
         get() {
             try {
-                val process = Runtime.getRuntime().exec("git config --global --get http.proxy")
+                val process = ProcessBuilder("git", "config", "--global", "--get", "http.proxy").start()
                 val reader = BufferedReader(InputStreamReader(process.inputStream))
                 var line: String?
                 val proxyUrl = StringBuilder()
@@ -27,7 +27,7 @@ object GitProxyHelper {
     @JvmStatic
     fun setGitProxy(proxyUrl: String) {
         try {
-            val process = Runtime.getRuntime().exec("git config --global http.proxy $proxyUrl")
+            val process = ProcessBuilder("git", "config", "--global", "http.proxy", proxyUrl).start()
             process.waitFor()
         } catch (e: IOException) {
             e.printStackTrace()
@@ -39,7 +39,7 @@ object GitProxyHelper {
     @JvmStatic
     fun unsetGitProxy() {
         try {
-            val process = Runtime.getRuntime().exec("git config --global --unset http.proxy")
+            val process = ProcessBuilder("git", "config", "--global", "--unset", "http.proxy").start()
             process.waitFor()
         } catch (e: IOException) {
             e.printStackTrace()
