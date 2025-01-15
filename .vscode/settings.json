@@ -1,0 +1,8 @@
+{
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "C:/Users/x263290/.jdks/corretto-17.0.13"
+        }
+    ]
+}
